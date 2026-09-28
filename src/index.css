@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    font-family: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    direction: rtl;
+    text-align: right;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* ==========================================================================
+   1. LIGHT THEME (فاتح) - Bright, crisp, clean white & subtle cool grey
+   ========================================================================== */
+html.theme-light {
+  color-scheme: light;
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
+html.theme-light body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+html.theme-light .bg-white {
+  background-color: #ffffff !important;
+}
+
+html.theme-light .bg-slate-50 {
+  background-color: #f8fafc !important;
+}
+
+html.theme-light .bg-slate-100 {
+  background-color: #f1f5f9 !important;
+}
+
+html.theme-light .border-slate-200,
+html.theme-light .border-slate-100 {
+  border-color: #e2e8f0 !important;
+}
+
+html.theme-light .text-slate-900 {
+  color: #0f172a !important;
+}
+
+html.theme-light .text-slate-800,
+html.theme-light .text-slate-700 {
+  color: #1e293b !important;
+}
+
+html.theme-light .text-slate-600,
+html.theme-light .text-slate-500 {
+  color: #64748b !important;
+}
+
+html.theme-light .text-slate-400 {
+  color: #94a3b8 !important;
+}
+
+/* ==========================================================================
+   2. DARK THEME (داكن) - Deep Slate Navy (#0f172a) with Slate-800 Cards
+   ========================================================================== */
+html.theme-dark {
+  color-scheme: dark;
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+
+html.theme-dark body {
+  background-color: #0f172a !important;
+  color: #f8fafc !important;
+}
+
+html.theme-dark .bg-slate-50,
+html.theme-dark .bg-slate-950 {
+  background-color: #0f172a !important;
+}
+
+html.theme-dark .bg-white,
+html.theme-dark .bg-slate-900 {
+  background-color: #1e293b !important;
+}
+
+html.theme-dark .bg-slate-100,
+html.theme-dark .bg-slate-800 {
+  background-color: #334155 !important;
+}
+
+html.theme-dark .border-slate-100,
+html.theme-dark .border-slate-200,
+html.theme-dark .border-slate-700,
+html.theme-dark .border-slate-800 {
+  border-color: #334155 !important;
+}
+
+html.theme-dark .text-slate-900 {
+  color: #f8fafc !important;
+}
+
+html.theme-dark .text-slate-800,
+html.theme-dark .text-slate-700 {
+  color: #e2e8f0 !important;
+}
+
+html.theme-dark .text-slate-600,
+html.theme-dark .text-slate-500 {
+  color: #94a3b8 !important;
+}
+
+html.theme-dark .text-slate-400 {
+  color: #64748b !important;
+}
+
+/* ==========================================================================
+   3. NIGHT THEME (ليلي ناصع) - True AMOLED Pure Black (#000000)
+   Distinct from Dark Theme: Pitch black backgrounds, high contrast neon accents
+   ========================================================================== */
+html.theme-night {
+  color-scheme: dark;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+html.theme-night body {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+html.theme-night .bg-slate-50,
+html.theme-night .bg-slate-950,
+html.theme-night main {
+  background-color: #000000 !important;
+}
+
+html.theme-night .bg-white,
+html.theme-night .bg-slate-900 {
+  background-color: #0a0a0a !important;
+}
+
+html.theme-night .bg-slate-100,
+html.theme-night .bg-slate-800 {
+  background-color: #141414 !important;
+}
+
+html.theme-night .border-slate-100,
+html.theme-night .border-slate-200,
+html.theme-night .border-slate-700,
+html.theme-night .border-slate-800 {
+  border-color: #222222 !important;
+}
+
+html.theme-night .text-slate-900 {
+  color: #ffffff !important;
+}
+
+html.theme-night .text-slate-800,
+html.theme-night .text-slate-700 {
+  color: #f4f4f5 !important;
+}
+
+html.theme-night .text-slate-600,
+html.theme-night .text-slate-500 {
+  color: #a1a1aa !important;
+}
+
+html.theme-night .text-slate-400 {
+  color: #71717a !important;
+}
+
+/* Night theme inputs */
+html.theme-night input,
+html.theme-night select,
+html.theme-night textarea {
+  background-color: #050505 !important;
+  border-color: #262626 !important;
+  color: #ffffff !important;
+}
+
+html.theme-night input::placeholder,
+html.theme-night textarea::placeholder {
+  color: #52525b !important;
+}
+
+/* Night theme navigation & header */
+html.theme-night nav {
+  background-color: rgba(0, 0, 0, 0.98) !important;
+  border-color: #1f1f1f !important;
+}
+
+html.theme-night header {
+  background-color: rgba(0, 0, 0, 0.96) !important;
+  border-color: #1f1f1f !important;
+}
+
+/* General Mobile App Polish */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Active tap feel for native-like responsiveness */
+button:active {
+  transform: scale(0.98);
+}
+
+/* Hide scrollbars while preserving scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

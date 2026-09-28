@@ -1,0 +1,6 @@
+{
+  "name": "Fake",
+  "description": "تطبيق إدارة الأعمال وحسابات العملاء والمشتريات والخزينة",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

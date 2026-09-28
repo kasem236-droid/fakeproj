@@ -1,0 +1,125 @@
+{
+  "entities": {
+    "customers": {
+      "title": "Customer",
+      "description": "Customer contact and section information",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "primaryPhone": { "type": "string" },
+        "secondaryPhone": { "type": "string" },
+        "section": { "type": "string", "enum": ["sila", "power", "fake"] },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "primaryPhone", "section", "createdAt", "updatedAt"]
+    },
+    "suppliers": {
+      "title": "Supplier",
+      "description": "Supplier business data and debt balances",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "notes": { "type": "string" },
+        "totalDebt": { "type": "number" },
+        "totalPaid": { "type": "number" },
+        "remainingBalance": { "type": "number" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "phone", "remainingBalance"]
+    },
+    "purchase_invoices": {
+      "title": "PurchaseInvoice",
+      "description": "Purchase invoices with items and supplier links",
+      "type": "object",
+      "properties": {
+        "invoiceNumber": { "type": "string" },
+        "supplierId": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "supplierPhone": { "type": "string" },
+        "date": { "type": "string" },
+        "items": { "type": "array" },
+        "totalAmount": { "type": "number" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["invoiceNumber", "supplierId", "supplierName", "date", "totalAmount"]
+    },
+    "supplier_payments": {
+      "title": "SupplierPayment",
+      "description": "Payment records to suppliers",
+      "type": "object",
+      "properties": {
+        "supplierId": { "type": "string" },
+        "supplierName": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["supplierId", "amount", "date", "paymentMethod"]
+    },
+    "supplier_statements": {
+      "title": "SupplierStatementEntry",
+      "description": "Chronological statement log per supplier",
+      "type": "object",
+      "properties": {
+        "supplierId": { "type": "string" },
+        "date": { "type": "string" },
+        "type": { "type": "string" },
+        "invoiceNumber": { "type": "string" },
+        "invoiceAmount": { "type": "number" },
+        "paymentAmount": { "type": "number" },
+        "paymentMethod": { "type": "string" },
+        "balanceAfter": { "type": "number" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["supplierId", "date", "type", "balanceAfter"]
+    },
+    "treasury_transactions": {
+      "title": "TreasuryTransaction",
+      "description": "All treasury movement: deposits, transfers, expenses",
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "amount": { "type": "number" },
+        "date": { "type": "string" },
+        "sourceOrRecipient": { "type": "string" },
+        "paymentMethod": { "type": "string" },
+        "relatedSupplierId": { "type": "string" },
+        "relatedInvoiceId": { "type": "string" },
+        "note": { "type": "string" },
+        "balanceAfter": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["type", "amount", "date", "balanceAfter"]
+    },
+    "external_recipients": {
+      "title": "ExternalRecipient",
+      "description": "Entities or individuals for external transfers",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "phone": { "type": "string" },
+        "notes": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name"]
+    },
+    "app_metadata": {
+      "title": "AppMetadata",
+      "description": "Global counters, invoice numbering state, undo stack",
+      "type": "object",
+      "properties": {
+        "key": { "type": "string" },
+        "value": { "type": "string" }
+      }
+    }
+  }
+}
